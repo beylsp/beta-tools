@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 from codecs import open
 from os import path
 
-from beta import __version__
+from flask_betatools import __version__
 
 here = path.abspath(path.dirname(__file__))
 
@@ -18,9 +18,9 @@ install_requires = [x.strip() for x in all_reqs if 'git+' not in x]
 dependency_links = [x.strip().replace('git+', '') for x in all_reqs if 'git+' not in x]
 
 setup(
-    name='beta-tools',
+    name='Flask-BetaTools',
     version=__version__,
-    description='A collection of testing utensils',
+    description='A collection of Flask utensils',
     long_description=long_description,
     url='https://github.com/beylsp/beta-tools',
     download_url='https://github.com/beylsp/beta-tools/tarball/' + __version__,
@@ -36,4 +36,5 @@ setup(
     author='Patrik Beyls',
     install_requires=install_requires,
     dependency_links=dependency_links,
+    test_suite = "tests",
 )

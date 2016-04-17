@@ -2,6 +2,6 @@
 Unit Test framework wrappers.
 """
 
-from beta.test.testcases import LiveServerTestCase
+from flask_betatools.test.testcases import LiveServerTestCase
 
 __all__ = ['LiveServerTestCase']
