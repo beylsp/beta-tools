@@ -1,2 +1,2 @@
 # flask-betatools
-A collection of Flask utensils
+A collection of Flask utensils.
