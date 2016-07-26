@@ -25,10 +25,7 @@ setup(
       'Programming Language :: Python :: 2',
     ],
     keywords='',
-    packages=find_packages(exclude=['docs', 'tests*']),
-    include_package_data=True,
+    packages=find_packages(),
     author='Patrik Beyls',
-    install_requires=install_requires,
-    dependency_links=dependency_links,
     test_suite = "tests",
 )
