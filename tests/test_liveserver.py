@@ -1,11 +1,11 @@
-from urllib import urlopen
-from flask_app import create_app
-from flask_betatools.test import LiveServerTestCase
+import unisquid
+import urllib
+import wsgiref
 
 
-class TestLiveServer(LiveServerTestCase):
+class TestLiveServer(unisquid.LiveServerTestCase):
     def create_app(self):
-        return create_app()
+        return wsgiref.simple_server.demo_app
 
     def test_server_process_is_spawned(self):
         thread = self.server_thread
@@ -14,6 +14,6 @@ class TestLiveServer(LiveServerTestCase):
         self.assertTrue(thread.is_alive())
 
     def test_server_process_listening(self):
-        response = urlopen(self.live_server_url)
-        self.assertTrue(b'OK' in response.read())
+        response = urllib.urlopen(self.live_server_url)
+        self.assertTrue(b'Hello world!' in response.read())
         self.assertEqual(response.code, 200)

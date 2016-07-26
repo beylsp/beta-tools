@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 from codecs import open
 from os import path
 
-from flask_betatools import __version__
+from unisquid import __version__
 
 here = path.abspath(path.dirname(__file__))
 
@@ -10,20 +10,14 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
-# get the dependencies and installs
-with open(path.join(here, 'requirements.txt'), encoding='utf-8') as f:
-    all_reqs = f.read().split('\n')
-
-install_requires = [x.strip() for x in all_reqs if 'git+' not in x]
-dependency_links = [x.strip().replace('git+', '') for x in all_reqs if 'git+' not in x]
 
 setup(
-    name='Flask-BetaTools',
+    name='unisquid',
     version=__version__,
-    description='A collection of Flask utensils',
+    description='Yet another unittest extension for python.',
     long_description=long_description,
-    url='https://github.com/beylsp/beta-tools',
-    download_url='https://github.com/beylsp/beta-tools/tarball/' + __version__,
+    url='https://github.com/beylsp/unisquid',
+    download_url='https://github.com/beylsp/unisquid/tarball/' + __version__,
     license='MIT',
     classifiers=[
       'Development Status :: 3 - Alpha',
