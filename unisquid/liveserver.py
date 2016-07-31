@@ -1,8 +1,8 @@
 import os
-import Queue
 import socket
 import threading
 import unittest
+from six.moves import queue
 from wsgiref.simple_server import make_server, WSGIRequestHandler
 
 
@@ -89,7 +89,7 @@ class LiveServerTestCase(unittest.TestCase):
     def setUp(self):
         super(LiveServerTestCase, self).setUp()
 
-        self.q = Queue.Queue(maxsize=0)
+        self.q = queue.Queue(maxsize=0)
         self.app = self.create_app()
 
         # Launch the live server's thread.
