@@ -26,6 +26,7 @@ setup(
     ],
     keywords='',
     packages=find_packages(),
+    install_requires=['six'],
     author='Patrik Beyls',
     test_suite = "tests",
 )
