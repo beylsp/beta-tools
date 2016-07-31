@@ -1,4 +1,5 @@
 import os
+import Queue
 import socket
 import threading
 import unittest
@@ -88,6 +89,7 @@ class LiveServerTestCase(unittest.TestCase):
     def setUp(self):
         super(LiveServerTestCase, self).setUp()
 
+        self.q = Queue.Queue(maxsize=0)
         self.app = self.create_app()
 
         # Launch the live server's thread.
